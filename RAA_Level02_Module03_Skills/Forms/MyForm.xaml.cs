@@ -26,4 +26,9 @@ namespace RAA_Level02_Module03_Skills
             InitializeComponent();
         }
     }
+
+    public class DataClass1
+    {
+
+    }
 }
