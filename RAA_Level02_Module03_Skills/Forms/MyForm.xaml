@@ -22,13 +22,15 @@
                   EnableRowVirtualization="False"
                   EnableColumnVirtualization="False">            
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Item 1" Width="100"/>
-                <DataGridTextColumn Header="Item 2" Width="*"/>
-                <DataGridCheckBoxColumn Header="Item 3" Width="100"/>
-                <DataGridComboBoxColumn Header="Item 4" Width="200"/>
-            </DataGrid.Columns>
-            
+                <DataGridTextColumn Header="Item 1" Width="100" Binding="{Binding Item1}" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Item 2" Width="*" Binding="{Binding Item2}" IsReadOnly="False"/>
+                <DataGridCheckBoxColumn Header="Item 3" Width="100" Binding="{Binding Item3}" IsReadOnly="False"/>
+                <DataGridComboBoxColumn Header="Item 4" Width="200" IsReadOnly="False"/>
+            </DataGrid.Columns>           
         </DataGrid>
-
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnOK" Width="90" Height="30" Content="OK" Margin="0,0,5,0" Click="btnOK_Click"/>
+            <Button x:Name="btnCancel" Width="90" Height="30" Content="Cancel" Margin="5,0,0,0" Click="btnCancel_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
