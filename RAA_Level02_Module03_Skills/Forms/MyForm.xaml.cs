@@ -23,6 +23,7 @@ namespace RAA_Level02_Module03_Skills
     public partial class MyForm : Window
     {
         ObservableCollection<DataClass1> dataList {  get; set; }
+        ObservableCollection<string> dataItems { get; set; }
         public MyForm()
         {
             InitializeComponent();
@@ -30,7 +31,10 @@ namespace RAA_Level02_Module03_Skills
             dataList = new ObservableCollection<DataClass1>();
             dataList.Add(new DataClass1());
 
+            dataItems = new ObservableCollection<string> { "one", "two", "three", "four" };
+
             grdData.ItemsSource = dataList;
+            colItem4.ItemsSource = dataItems;
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
