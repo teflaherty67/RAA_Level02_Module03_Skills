@@ -11,6 +11,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <DataGrid x:Name="grdData" Grid.Row="1"
                   GridLinesVisibility="All"
@@ -28,7 +29,11 @@
                 <DataGridComboBoxColumn x:Name="colItem4" Header="Item 4" Width="200" IsReadOnly="False" SelectedItemBinding="{Binding Item4}"/>
             </DataGrid.Columns>           
         </DataGrid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button x:Name="btnAdd" Width="30" Height="30" Content="+" Margin="0,0,5,0" Click="btnAdd_Click" />
+            <Button x:Name="btnRemove" Width="30" Height="30" Content="-" Margin="5,0,0,0" Click="btnRemove_Click" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="btnOK" Width="90" Height="30" Content="OK" Margin="0,0,5,0" Click="btnOK_Click"/>
             <Button x:Name="btnCancel" Width="90" Height="30" Content="Cancel" Margin="5,0,0,0" Click="btnCancel_Click"/>
         </StackPanel>

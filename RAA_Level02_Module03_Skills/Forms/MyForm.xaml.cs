@@ -29,8 +29,7 @@ namespace RAA_Level02_Module03_Skills
             InitializeComponent();
 
             dataList = new ObservableCollection<DataClass1>();
-            dataList.Add(new DataClass1());
-
+            
             dataItems = new ObservableCollection<string> { "one", "two", "three", "four" };
 
             grdData.ItemsSource = dataList;
@@ -52,6 +51,26 @@ namespace RAA_Level02_Module03_Skills
         public List<DataClass1> GetData()
         {
             return dataList.ToList();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            dataList.Add(new DataClass1());
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (DataClass1 curRow in dataList)
+                {
+                    if (grdData.SelectedItem == curRow)
+                        dataList.Remove(curRow);
+                }
+            }
+            catch (Exception)
+            {
+            }            
         }
     }
 
