@@ -28,8 +28,24 @@ namespace RAA_Level02_Module03_Skills
 
             // put any code needed for the form here
 
+            List<DataClass2> dataList = new List<DataClass2>();
+            dataList.Add(new DataClass2("111", "222", true, "444"));
+            dataList.Add(new DataClass2("111", "222", true, "444"));
+            dataList.Add(new DataClass2("111", "222", true, "444"));
+            dataList.Add(new DataClass2("111", "222", true, "444"));
+            dataList.Add(new DataClass2("111", "222", true, "444"));
+            dataList.Add(new DataClass2("111", "222", true, "444"));
+
             // open form
-            MyForm curForm = new MyForm()
+            //MyForm curForm = new MyForm()
+            //{
+            //    Width = 800,
+            //    Height = 450,
+            //    WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
+            //    Topmost = true,
+            //};
+
+            MyForm2 curForm = new MyForm2()
             {
                 Width = 800,
                 Height = 450,
@@ -41,9 +57,9 @@ namespace RAA_Level02_Module03_Skills
 
             if(curForm.DialogResult == true)
             {
-                List<DataClass1> dataList = new List<DataClass1>();
+                List<DataClass2> dataList = new List<DataClass2>();
 
-                foreach(DataClass1 curClass in dataList)
+                foreach(DataClass2 curClass in dataList)
                 {
                     TaskDialog.Show("Test", curClass.Item1);
                 }
