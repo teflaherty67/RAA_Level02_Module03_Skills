@@ -48,6 +48,11 @@ namespace RAA_Level02_Module03_Skills
             this.DialogResult = false;
             this.Close();
         }
+
+        public List<DataClass1> GetData()
+        {
+            return dataList.ToList();
+        }
     }
 
     public class DataClass1

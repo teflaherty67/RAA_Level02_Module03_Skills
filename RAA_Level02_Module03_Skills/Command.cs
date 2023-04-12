@@ -29,7 +29,7 @@ namespace RAA_Level02_Module03_Skills
             // put any code needed for the form here
 
             // open form
-            MyForm currentForm = new MyForm()
+            MyForm curForm = new MyForm()
             {
                 Width = 800,
                 Height = 450,
@@ -37,7 +37,17 @@ namespace RAA_Level02_Module03_Skills
                 Topmost = true,
             };
 
-            currentForm.ShowDialog();
+            curForm.ShowDialog();
+
+            if(curForm.DialogResult == true)
+            {
+                List<DataClass1> dataList = new List<DataClass1>();
+
+                foreach(DataClass1 curClass in dataList)
+                {
+                    TaskDialog.Show("Test", curClass.Item1);
+                }
+            }
 
             // get form data and do something
 
