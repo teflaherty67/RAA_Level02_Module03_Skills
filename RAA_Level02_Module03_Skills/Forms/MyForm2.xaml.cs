@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autodesk.Revit.DB;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -20,15 +21,15 @@ namespace RAA_Level02_Module03_Skills
     /// <summary>
     /// Interaction logic for Window.xaml
     /// </summary>
-    public partial class MyForm : Window
+    public partial class MyForm2 : Window
     {
-        ObservableCollection<DataClass1> dataList {  get; set; }
+        ObservableCollection<SpatialElement> dataList {  get; set; }
         ObservableCollection<string> dataItems { get; set; }
-        public MyForm()
+        public MyForm2(List<SpatialElement> _dataList)
         {
             InitializeComponent();
 
-            dataList = new ObservableCollection<DataClass1>();
+            dataList = new ObservableCollection<SpatialElement>(_dataList);
             
             dataItems = new ObservableCollection<string> { "one", "two", "three", "four" };
 
@@ -48,37 +49,45 @@ namespace RAA_Level02_Module03_Skills
             this.Close();
         }
 
-        public List<DataClass1> GetData()
+        public List<SpatialElement> GetData()
         {
-            return dataList.ToList();
+            return grdData.SelectedItems;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            dataList.Add(new DataClass1());
+            //dataList.Add(new DataClass2("", "", false, ""));
         }
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                foreach (DataClass1 curRow in dataList)
-                {
-                    if (grdData.SelectedItem == curRow)
-                        dataList.Remove(curRow);
-                }
-            }
-            catch (Exception)
-            {
-            }            
+            //try
+            //{
+            //    foreach (DataClass2 curRow in dataList)
+            //    {
+            //        if (grdData.SelectedItem == curRow)
+            //            dataList.Remove(curRow);
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //}            
         }
     }
 
-    public class DataClass1
+    public class DataClass2
     {
         public string Item1 { get; set; }
         public string Item2 { get; set; }
         public bool Item3 { get; set; }
         public string Item4 { get; set; }
+
+        public DataClass2(string item1, string item2, bool item3, string item4)
+        {
+            Item1 = item1;
+            Item2 = item2;
+            Item3 = item3;
+            Item4 = item4;
+        }
     }
 }

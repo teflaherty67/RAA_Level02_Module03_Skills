@@ -7,6 +7,7 @@ using Autodesk.Revit.UI.Selection;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 
 #endregion
@@ -28,13 +29,20 @@ namespace RAA_Level02_Module03_Skills
 
             // put any code needed for the form here
 
-            List<DataClass2> dataList = new List<DataClass2>();
-            dataList.Add(new DataClass2("111", "222", true, "444"));
-            dataList.Add(new DataClass2("111", "222", true, "444"));
-            dataList.Add(new DataClass2("111", "222", true, "444"));
-            dataList.Add(new DataClass2("111", "222", true, "444"));
-            dataList.Add(new DataClass2("111", "222", true, "444"));
-            dataList.Add(new DataClass2("111", "222", true, "444"));
+            List<SpatialElement> roomList = new List<SpatialElement>();
+
+            FilteredElementCollector collector = new FilteredElementCollector(doc);
+            collector.OfCategory(BuiltInCategory.OST_Rooms);
+
+            roomList = collector.Cast<SpatialElement>().ToList();
+
+            //List<DataClass2> dataList = new List<DataClass2>();
+            //dataList.Add(new DataClass2("111", "222", true, "444"));
+            //dataList.Add(new DataClass2("111", "222", true, "444"));
+            //dataList.Add(new DataClass2("111", "222", true, "444"));
+            //dataList.Add(new DataClass2("111", "222", true, "444"));
+            //dataList.Add(new DataClass2("111", "222", true, "444"));
+            //dataList.Add(new DataClass2("111", "222", true, "444"));
 
             // open form
             //MyForm curForm = new MyForm()
@@ -45,7 +53,7 @@ namespace RAA_Level02_Module03_Skills
             //    Topmost = true,
             //};
 
-            MyForm2 curForm = new MyForm2()
+            MyForm2 curForm = new MyForm2(roomList)
             {
                 Width = 800,
                 Height = 450,
@@ -57,12 +65,12 @@ namespace RAA_Level02_Module03_Skills
 
             if(curForm.DialogResult == true)
             {
-                List<DataClass2> dataList = new List<DataClass2>();
+                List<SpatialElement> dataList2 = curForm.GetData();
 
-                foreach(DataClass2 curClass in dataList)
-                {
-                    TaskDialog.Show("Test", curClass.Item1);
-                }
+                //foreach(DataClass2 curClass in dataList2)
+                //{
+                //    TaskDialog.Show("Test", curClass.Item1);
+                //}
             }
 
             // get form data and do something
