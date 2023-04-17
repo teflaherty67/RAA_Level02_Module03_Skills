@@ -18,7 +18,7 @@
                   AlternatingRowBackground="AliceBlue"
                   CanUserAddRows="True"
                   CanUserReorderColumns="True"
-                  SelectionMode="Single"
+                  SelectionMode="Extended"
                   AutoGenerateColumns="False"
                   EnableRowVirtualization="False"
                   EnableColumnVirtualization="False">            

@@ -34,7 +34,7 @@ namespace RAA_Level02_Module03_Skills
             dataItems = new ObservableCollection<string> { "one", "two", "three", "four" };
 
             grdData.ItemsSource = dataList;
-            colItem4.ItemsSource = dataItems;
+            //colItem4.ItemsSource = dataItems;
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -51,7 +51,14 @@ namespace RAA_Level02_Module03_Skills
 
         public List<SpatialElement> GetData()
         {
-            return grdData.SelectedItems;
+            List<SpatialElement> returnList = new List<SpatialElement>();
+
+            foreach (SpatialElement item in grdData.SelectedItems)
+            {
+                returnList.Add(item);
+            }
+
+            return returnList;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
