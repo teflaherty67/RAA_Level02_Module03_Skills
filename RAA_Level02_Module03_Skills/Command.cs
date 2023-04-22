@@ -31,18 +31,18 @@ namespace RAA_Level02_Module03_Skills
 
             List<SpatialElement> roomList = new List<SpatialElement>();
 
-            FilteredElementCollector collector = new FilteredElementCollector(doc);
-            collector.OfCategory(BuiltInCategory.OST_Rooms);
+            FilteredElementCollector colRooms = new FilteredElementCollector(doc);
+            colRooms.OfCategory(BuiltInCategory.OST_Rooms);
 
-            roomList = collector.Cast<SpatialElement>().ToList();
+            roomList = colRooms.Cast<SpatialElement>().ToList();
 
             //List<DataClass2> dataList = new List<DataClass2>();
-            //dataList.Add(new DataClass2("111", "222", true, "444"));
-            //dataList.Add(new DataClass2("111", "222", true, "444"));
-            //dataList.Add(new DataClass2("111", "222", true, "444"));
-            //dataList.Add(new DataClass2("111", "222", true, "444"));
-            //dataList.Add(new DataClass2("111", "222", true, "444"));
-            //dataList.Add(new DataClass2("111", "222", true, "444"));
+            //dataList.Add(new DataClass2("1111", "2222", true, "4444"));
+            //dataList.Add(new DataClass2("1111", "2222", true, "4444"));
+            //dataList.Add(new DataClass2("1111", "2222", true, "4444"));
+            //dataList.Add(new DataClass2("1111", "2222", true, "4444"));
+            //dataList.Add(new DataClass2("1111", "2222", true, "4444"));
+            //dataList.Add(new DataClass2("1111", "2222", true, "4444"));
 
             // open form
             //MyForm curForm = new MyForm()
@@ -67,7 +67,7 @@ namespace RAA_Level02_Module03_Skills
             {
                 List<SpatialElement> dataList2 = curForm.GetData();
 
-                //foreach(DataClass2 curClass in dataList2)
+                //foreach (DataClass2 curClass in dataList2)
                 //{
                 //    TaskDialog.Show("Test", curClass.Item1);
                 //}
