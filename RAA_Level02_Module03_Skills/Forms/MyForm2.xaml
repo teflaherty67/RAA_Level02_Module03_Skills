@@ -23,10 +23,10 @@
                   EnableRowVirtualization="False"
                   EnableColumnVirtualization="False">            
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Item 1" Width="100" Binding="{Binding Item1}" IsReadOnly="False"/>
-                <DataGridTextColumn Header="Item 2" Width="*" Binding="{Binding Item2}" IsReadOnly="False"/>
-                <DataGridCheckBoxColumn Header="Item 3" Width="100" Binding="{Binding Item3}" IsReadOnly="False"/>
-                <DataGridComboBoxColumn x:Name="colItem4" Header="Item 4" Width="200" IsReadOnly="False" SelectedItemBinding="{Binding Item4}"/>                
+                <DataGridTextColumn Header="Number" Width="100" Binding="{Binding Number}" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Area" Width="150" Binding="{Binding Area}" IsReadOnly="False"/>
+                <DataGridCheckBoxColumn Header="Is Pinned" Width="100" Binding="{Binding Pinned}" IsReadOnly="False"/>                
             </DataGrid.Columns>           
         </DataGrid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
